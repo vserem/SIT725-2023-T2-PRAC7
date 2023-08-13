@@ -13,6 +13,7 @@ const addCards = (items) => {
     $("#card-section").append(itemToAppend);
     });
     }
+
     const formSubmitted = () => {
         let formData = {};
         formData.title = $('#title').val();
@@ -25,13 +26,14 @@ const addCards = (items) => {
         }
 
 
+
 function postCat(cat){
     $.ajax({
         url:'/api/cat',
         type:'POST',
         data:cat,
         success:(result)=>{
-            if(result.statusCode===201){
+            if(result.statuscode===201){
                 alert('cat post successful');
             }
         }
@@ -39,9 +41,8 @@ function postCat(cat){
 }
  
 function getAllCats(){
-  $.get('/api/cats', (response)=>{
-    //response data is in array format, so we can use it
-    if (response.statusCode===200){
+  $.get('/api/cats',(response)=>{
+    if (response.statuscode===200){
         addCards(response.data);
     }
   }); 
