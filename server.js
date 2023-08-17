@@ -37,7 +37,7 @@ async function runDBconnect() {
     catch (ex) {
         console.error(ex);
     }
-}
+};
 
 
 app.get('/', function (req, res) {
