@@ -10,7 +10,11 @@ router.post('/', (req, res) => {
 
 
 router.get('/', (req, res) => {
-   controller.getAllCats(req,res)
+   controller.getAllCats(req,res);
+});
+
+router.delete('/', (req, res) => {
+   controller.deleteCat(req,res);
 });
 
 
